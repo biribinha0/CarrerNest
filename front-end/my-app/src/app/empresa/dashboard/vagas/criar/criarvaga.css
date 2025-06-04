@@ -43,6 +43,7 @@
 }
 .select__control input {
     box-shadow: none !important;
+    background-color: inherit;
 }
 .form-container {
     max-width: 350px;

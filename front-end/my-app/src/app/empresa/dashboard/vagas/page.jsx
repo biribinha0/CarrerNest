@@ -19,7 +19,7 @@ export default function Vagas() {
             return;
         }
         const decoded = jwtDecode(token)
-        fetch(`${API_URL}/vagas/empresa/${decoded.id}`, {
+        fetch(`${API_URL}/vagas/empresa/2`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

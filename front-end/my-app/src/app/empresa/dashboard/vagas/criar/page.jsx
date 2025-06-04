@@ -170,7 +170,7 @@ export default function CriarVaga() {
                                     ></textarea>
                                 </div>
 
-                                <div className="d-flex flex-column flex-md-row">
+                                <div className="d-flex w-100 flex-column flex-md-row">
                                     <div className="mb-3 col-12 col-md-6 pe-md-2">
                                         <label htmlFor="remuneracao" className="form-label">Remuneração (R$)</label>
                                         <input

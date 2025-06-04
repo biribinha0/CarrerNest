@@ -10,7 +10,7 @@ export default function Notificacoes() {
     const decoded = jwtDecode(token);
     const API_URL = 'http://localhost:3001'
     useEffect(() => {
-        fetch(`${API_URL}/empresas/${decoded.id}/notificacoes`, {
+        fetch(`${API_URL}/empresas/2/notificacoes`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
