@@ -76,10 +76,10 @@ export default function DashboardLayout({ children }) {
         <div className="container-fluid mx-auto">
             <div className="row d-flex flex-wrap px-sm-4 px-md-5">
                 <Sidebar page={page} setPage={setPage}></Sidebar>
-                <div className="col-12 col-sm-8 col-md-9 col-xl-9 col-xxl-10 py-5 shadow">
+                <div className="col-12 col-sm-12 col-md-9 col-xl-9 col-xxl-10 py-5 shadow">
                     <div className="row px-4 content-area">
-                        <div className="empresa-user d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center mb-3 dropdown">
-                            <div className="d-flex d-md-block mb-3 mb-md-0 justify-content-center justify-content-md-start flex-wrap">
+                        <div className="empresa-user d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center mb-3 dropdown">
+                            <div className="d-flex d-sm-block mb-3 mb-md-0 justify-content-center justify-content-md-start flex-wrap">
                                 <img src={usuario.logo} alt={`Logo da empresa ${usuario.nome}`} className="img-fluid empresa-logo " />
 
                                 <button
@@ -90,7 +90,7 @@ export default function DashboardLayout({ children }) {
                                     aria-expanded="false"
                                 >
                                     {usuario.nome}
-                                    <i className="bi bi-caret-down-fill seta-dropdown"></i>
+                                    <i className="bi bi-caret-down-fill seta-dropdown ps-2"></i>
                                 </button>
                                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="empresaDropdown" >
                                     <li>

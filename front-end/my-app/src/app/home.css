@@ -152,13 +152,41 @@ span {
   }
 }
 
+.subtitulopage {
+  font-size: large;
+  color: #004d4d;
+}
+ 
 .titulocard {
   color: #ffff;
   width: 100%;
-  font-size: 45px;
+  font-size: 100%;
 }
-
-.subtitulopage {
-  font-size: medium;
-  color: #004d4d;
+ 
+.boxEmpresa {
+  width: 100%;
+  height: auto;
+  background-color: #007172;
+  border-radius: 40px;
+}
+ 
+.cardBody {
+  border: solid 3px;
+  border-radius: 45px;
+  border-color: #f29325;
+  text-align: justify;
+}
+ 
+.pfHome {
+  color: #007172;
+  font-family: poppins;
+  margin-top: 40px;
+}
+.caixaLaranja{
+  border-radius: 30px;
+  background-color: #f29325;
+}
+.titulograndemenor{
+  color: #fff7ef;
+  font-size: 4rem;
 }

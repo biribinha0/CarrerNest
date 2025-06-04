@@ -136,3 +136,7 @@
     box-shadow: 0 0 0 1px var(--verde-agua);
     color: var(--verde-agua) !important;
 }
+
+.searchvaga{
+    width: 30%;
+}

@@ -10,7 +10,7 @@ export default function Notificacoes() {
     const decoded = jwtDecode(token);
     const API_URL = 'http://localhost:3001'
     useEffect(() => {
-        fetch(`${API_URL}/empresas/2/notificacoes`, {
+        fetch(`${API_URL}/empresas/${decoded.id}/notificacoes`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -30,7 +30,7 @@ export default function Notificacoes() {
         <div className="rounded-5 pagina-ativa p-3 vh-100">
             <div className="rounded-4 bg-white p-3 d-flex flex-column justify-content-end">
                 <div className="d-flex justify-content-end align-items-center border-bottom pb-2">
-                    <div className="form-control w-25 p-3 rounded-5 d-flex ">
+                    <div className="form-control searchvaga p-3 rounded-5 d-flex ">
                         <i className="bi bi-search pe-3 opacity-50"></i>
                         <input type="text" style={{ all: 'unset' }} placeholder="Buscar..." />
 
@@ -42,13 +42,13 @@ export default function Notificacoes() {
                         key={index}
                         className="d-flex justify-content-between align-items-center py-3 border-bottom px-5"
                     >
-                        <div className="d-flex align-items-center gap-2">
+                        <div className="d-flex align-items-center gap-2 col-10">
                             <input type="checkbox" className="form-check-input" />
                             <span className="px-4 text-black">
                                 {n.mensagem}
                             </span>
                         </div>
-                        <span className="text-muted" style={{ fontSize: '0.875rem' }}>
+                        <span className="text-muted col-2 text-black opacity-75" style={{ fontSize: '0.875rem' }}>
                             {new Date(n.criado_em).toLocaleString('pt-BR', {
                                 day: '2-digit',
                                 month: 'long',

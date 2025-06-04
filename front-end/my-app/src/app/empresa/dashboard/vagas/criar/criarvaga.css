@@ -30,11 +30,11 @@
 .vaga-form div.select__control {
     border: 1px solid var(--verde);
     border-radius: 10px;
-    background-color: #fff !important;
+    background-color: #fff ;
 }
 .vaga-form input:focus,
 .vaga-form textarea:focus,
-.vaga-form div.select__control:focus {
+.vaga-form div.select__control--is-focused {
     border: 1px solid var(--verde);
     box-shadow: 0 0 0 .25rem var(--verde-opacidade);
 }
@@ -53,3 +53,4 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px #f6f6f6 inset !important;
   -webkit-text-fill-color: #292929 !important;
 }
+

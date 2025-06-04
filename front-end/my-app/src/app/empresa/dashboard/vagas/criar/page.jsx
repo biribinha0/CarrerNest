@@ -3,6 +3,7 @@ import Select from "react-select";
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
+import CurrencyInput from 'react-currency-input-field';
 import "./criarvaga.css";
 
 export default function CriarVaga() {
@@ -108,7 +109,7 @@ export default function CriarVaga() {
                     </div>
                     <div className="row d-flex justify-content-center p-3">
                         <h3 className="text-center pt-3">Nova Vaga</h3>
-                        <div className="col-10 col-lg-8 col-xl-6 p-3 row">
+                        <div className="col-10 col-lg-10 col-xl-8 p-3 row">
                             <form className="vaga-form d-flex flex-column justify-content-center align-items-center" onSubmit={handleSubmit}>
 
                                 <div className="mb-3 col-12">
@@ -173,13 +174,19 @@ export default function CriarVaga() {
                                 <div className="d-flex w-100 flex-column flex-md-row">
                                     <div className="mb-3 col-12 col-md-6 pe-md-2">
                                         <label htmlFor="remuneracao" className="form-label">Remuneração (R$)</label>
-                                        <input
-                                            type="number"
+                                        <CurrencyInput
+                                            name="input-name"
                                             className="form-control"
                                             id="remuneracao"
                                             value={vaga.remuneracao}
-                                            onChange={(e) => setVaga({ ...vaga, remuneracao: e.target.value })}
-                                            required
+                                            placeholder="Please enter a number"
+                                            defaultValue={1000}
+                                            decimalsLimit={2}
+                                            onValueChange={(value, name, values) => console.log(value, name, values)}
+                                            onChange={
+                                                (e) => setVaga({
+                                                    ...vaga, remuneracao: (e.target.value)
+                                                })}
                                         />
                                     </div>
 
@@ -199,7 +206,7 @@ export default function CriarVaga() {
                                 <div className="mb-3 col-12">
                                     <label htmlFor="tipo" className="form-label">Tipo da Vaga</label>
                                     <Select
-                                        id="tipo"
+                                        id="tipo"   
                                         options={tipos}
                                         placeholder="Selecione o tipo"
                                         value={tipos.find(option => option.value === vaga.tipo)}
@@ -216,7 +223,7 @@ export default function CriarVaga() {
                                         isMulti
                                         id="curso_desejado"
                                         options={cursos}
-                                        placeholder="Selecione o curso desejado"
+                                        placeholder="Selecione os cursos desejados"
                                         value={cursos.find(option => option.value === vaga.curso_desejado)}
                                         onChange={(option) => setVaga({ ...vaga, curso_desejado: option.value })}
                                         required
@@ -224,9 +231,9 @@ export default function CriarVaga() {
                                         classNamePrefix="select"
                                     />
                                 </div>
-                                    <button className="btn btn-primary found col-8" type="submit">
-                                        Criar Vaga
-                                    </button>
+                                <button className="btn btn-primary found col-8" type="submit">
+                                    Criar Vaga
+                                </button>
                             </form>
                         </div>
                     </div>

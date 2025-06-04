@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Loading from '@/app/loading';
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
+import Modal from "@/components/Modal/page.jsx";
 
 export default function Vagas() {
     const [vagas, setVagas] = useState([]);
@@ -19,7 +20,7 @@ export default function Vagas() {
             return;
         }
         const decoded = jwtDecode(token)
-        fetch(`${API_URL}/vagas/empresa/2`, {
+        fetch(`${API_URL}/vagas/empresa/${decoded.id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -59,6 +60,10 @@ export default function Vagas() {
 
     console.log(listaVagas)
 
+
+  
+    
+
     return (
         <>
             <div className="d-flex justify-content-end align-items-center pb-2">
@@ -67,7 +72,7 @@ export default function Vagas() {
                     <input type="text" style={{ all: 'unset' }} placeholder="Buscar..." onChange={handleSearch} />
                 </div>
             </div>
-            <div className="rounded-5 pagina-ativa p-3 pt-0 vh-100">
+            <div className="rounded-5 pagina-ativa p-3 pt-0">
                 <div className="rounded-4 bg-white p-3 pt-0 d-flex flex-column justify-content-end">
                     <div className="d-flex justify-content-between align-items-center py-4 border-bottom px-5">
                         <div className="d-flex align-items-center w-100 row">
@@ -115,6 +120,73 @@ export default function Vagas() {
                     }
                 </div>
             </div>
+            <button
+    type="button"
+    className="btn btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModal"
+    data-whatever="@mdo"
+  >
+    Open modal for @mdo
+  </button>
+  <div
+    className="modal fade"
+    id="exampleModal"
+    tabIndex={-1}
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div className="modal-dialog" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="exampleModalLabel">
+            New message
+          </h5>
+          <button
+            type="button"
+            className="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div className="modal-body">
+          <form>
+            <div className="form-group">
+              <label htmlFor="recipient-name" className="col-form-label">
+                Recipient:
+              </label>
+              <input type="text" className="form-control" id="recipient-name" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message-text" className="col-form-label">
+                Message:
+              </label>
+              <textarea
+                className="form-control"
+                id="message-text"
+                defaultValue={""}
+              />
+            </div>
+          </form>
+        </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" className="btn btn-primary">
+            Send message
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>     
         </>
     )
 }

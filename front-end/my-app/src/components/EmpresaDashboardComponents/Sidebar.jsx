@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function Sidebar({ setPage, page }) {
     return (
-        <div className="col-12 col-sm-4 col-md-3 col-xl-3 col-xxl-2 bg-preto py-5 px-4 side-bar vh-md-100 shadow">
+        <div className="col-12 col-sm-12 col-md-3 col-xl-3 col-xxl-2 bg-preto py-5 px-4 side-bar vh-md-100 shadow">
             <Link href={'/'} className="d-flex align-items-center justify-content-center mb-4">
-                <div className="col-2 col-sm-5">
+                <div className="col-2 col-md-5">
                     <img src="/img/icons/micrologo.png" alt="micrologo" className="img-fluid" />
                 </div>
                 <h5 className="mb-0 mt-2 mt-sm-3 px-2">CarrerNest</h5>

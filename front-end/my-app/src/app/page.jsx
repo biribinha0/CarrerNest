@@ -1,5 +1,6 @@
 import "./home.css";
-import VagasHome from "@/components/VagasHome/VagasHome.jsx"
+import VagasHome from "@/components/VagasHome/VagasHome.jsx";
+import PerguntasFrequentes from '@/components/PerguntasFrequentes/PerguntasFrequentes.jsx';
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
           <h2 className="fw-bold">Comece sua carreira pela <span>CareerNest</span></h2>
         </div>
         {/* input de pesquisa de vagas */}
-        <div className="search-container container-fluid d-flex justify-content-center py-2">
+        <div className="search-container container-fluid d-flex justify-content-center py-2 w-md-50">
           <form className="position-relative">
             <input type="text" name="" placeholder="Encontre sua vaga dos sonhos" className="input" />
             <button type="submit" className="buttonSearch">
@@ -30,9 +31,10 @@ export default function Home() {
           </form>
         </div>
         {/* <cardHome /> */}
-        {/* <div className="container d-flex flex-wrap py-4">
+        <div className="container d-flex flex-wrap py-4">
           <VagasHome />
-        </div> */}
+
+        </div>
 
         <div className="p-3 mt-5">
           <h2 className="fw-bold">Cadastre-se gratuitamente!</h2>
@@ -123,9 +125,9 @@ export default function Home() {
           <h2 className="fw-bold"> Oque você procura? Escolha um de nossos portais</h2>
           <p className="subtitulopage align-items-center text-center">A <span>CareerNest</span> oferece soluções para estudantes e empresas!! Escolha abaixo o portal ideal para a sua necessidade</p>
         </div>
-        <div className="row d-flex justify-content-center align-items-center">
+        <div className="row d-flex justify-content-center gap-4 flex-wrap py-5">
           <div className="col-4 mb3 mb-sm-0 d-flex justify-content-center align-items-center">
-            <div className="cardPortal card text-bg-transparent " style={{ width: 300, border: 'none' }} >
+            <div className="cardPortal card text-bg-transparent " style={{ width: 500, border: 'none' }} >
               <img src="./img/portalEmpresa.png" className="card-img" alt="..." />
               <div className="card-img-overlay d-flex flex-column-reverse">
                 <h5 className="titulocard card-title">Portal Empresa</h5>
@@ -133,11 +135,76 @@ export default function Home() {
             </div>
           </div>
           <div className="col-4 mb3 mb-sm-0 d-flex justify-content-center align-items-center">
-            <div className="cardPortal card text-bg-transparent " style={{ width: 300, border: 'none' }} >
+            <div className="cardPortal card text-bg-transparent " style={{ width: 600, border: 'none' }} >
               <img src="./img/portalCandidato.png" className="card-img" alt="..." />
               <div className="card-img-overlay d-flex flex-column-reverse">
                 <h5 className="titulocard card-title">Portal Estudante</h5>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="boxEmpresa container-fluid mt-5 mb-3">
+        <div className="row justify-content-center align-items-center text-center">
+          <div className="col-md-4 mt-4  d-flex d-none d-lg-block">
+            <img src="./img/VagasEstagios.png" className="img-fluid md-none" alt="imagem figurativa da empresa" style={{ width: 500 }} />
+          </div>
+          <div className="col-12 col-md-4 m-4 d-flex justify-content-center">
+            <div className="bg-transparent w-400 w-sm-200 w-md-80 w-lg-100" style={{ MaxWidth: '400px', height: '100%' }}>
+              <div className="cardBody card-body p-5">
+                <h5 className="card-title" style={{ fontSize: '40px', color: ' #f29325', marginBottom: 10, fontFamily: 'poppins' }}>A CarreerNest</h5>
+                <p style={{ fontSize: '20px', color: 'rgb(255, 246, 236)', fontFamily: 'poppins' }}>A <span>CareerNest</span> é reconhecida em todo Brasil pela excelência na administração de estagiários. Oferecemos o melhor serviço de divulgação de vagas, recrutamento e  seleção dos candidatos com o permanente acompanhamento de todos os processos.</p>
+                <p style={{ fontSize: '20px', color: 'rgb(255, 246, 236)', fontFamily: 'poppins' }}>Somos uma fábrica de realizar sonhos e <span>desde 2009</span> trabalhamos para entregar a melhor solução na administração de estágios, o que nos torna líder no segmento. Coloque sua empresa em boas mãos e não tenha dor de cabeça. Contrate os melhores estagiários com a Super Estágios.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className=" mt-5 mb-3">
+        <div className="perguntas container text-center p-2">
+          <h1 className='pfHome fw-bold'>Perguntas Frequentes</h1>
+        </div>
+        <PerguntasFrequentes />
+      </div>
+      <div className="caixaLaranja bg-laranja container-fluid p-3">
+        <div className="container">
+          <div className="row p-3 my-4">
+            <div className="col-md-6 d-flex justify-content-center align-items-center">
+              <h1 className='titulograndemenor fw-bold '>Existimos para <span className='fw-bold ' style={{ color: 'rgb(255, 203, 143)' }}>apoiar a juventude</span> a conquistar o mundo do trabalho </h1>
+            </div>
+            <div className="col-md-6 text-align-justify w-20">
+              <p style={{ color: 'rgb(255, 246, 236)', fontFamily: 'poppins', fontSize: '23px' }}>Sempre conectado com o futuro, somos referência nacional em assistência social e reconhecidos como uma instituição pioneira e protagonista no processo de seleção, contratação, inclusão, gestão e desenvolvimento de jovens através dos programas de aprendizagem e estágio.</p>
+              <p style={{ color: 'rgb(255, 246, 236)', fontFamily: 'poppins', fontSize: '23px' }}>Em mais de meio século de história, ajudamos a inserir mais de 6 milhões de jovens no universo profissional por meio de parcerias com empresas de diversos segmentos e órgãos públicos que compartilham e acreditam em nossa missão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* missão visão e valores */}
+      <div className="borda container p-4 py-3  border-top border-bottom border-4 " style={{ height: 'auto' }}>
+        <div className="container d-flex flex-wrap align-items-center justify-content-center p-4 my-2">
+          <div className="col-md-3 d-flex flex-column align-items-center text-center">
+            <i className="bi bi-emoji-laughing" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+            <div>
+              <p className="mb-0">Tá com você. Sempre</p>
+            </div>
+          </div>
+          <div className="col-md-3 d-flex flex-column align-items-center text-center">
+            <i className="bi bi-check2-circle" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+            <div>
+              <p className="mb-0">É simplesmente simples.</p>
+            </div>
+          </div>
+          <div className="col-md-3 d-flex flex-column align-items-center text-center">
+            <i className="bi bi-chat-heart" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+            <div>
+              <p className="mb-0">Valoriza quem você é.</p>
+            </div>
+          </div>
+          <div className="col-md-3 d-flex flex-column align-items-center text-center">
+            <i className="bi bi-star" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+            <div>
+              <p className="mb-0">Sabe o caminho pra te guiar.</p>
             </div>
           </div>
         </div>

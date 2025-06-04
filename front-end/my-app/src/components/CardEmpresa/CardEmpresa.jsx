@@ -50,7 +50,7 @@ export default function CardEmpresa() {
     <div className="container my-5">
       {/* TÍTULO */}
       <div className="text-center mb-4">
-        <h2 className="fw-bold display-6" style={{ color: "#025259" }}>
+        <h2 className="fw-bold display-6" style={{ color: "#bd4b0d" }}>
           Soluções que agilizam seu recrutamento
         </h2>
         <p className="text-muted fs-6">
@@ -73,18 +73,21 @@ export default function CardEmpresa() {
                     style={{
                       backgroundColor: "#f1f1f1",
                       borderRadius: "50%",
-                      padding: "1rem",
-                      display: "inline-flex",
+                      width: "80px",
+                      height: "80px",
+                      display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
                     <i
                       className={patrocinador.icon}
-                      style={{ fontSize: "2.5rem", color: patrocinador.corTexto }}
+                      style={{ fontSize: "3rem", color: patrocinador.corTexto }}
                     ></i>
                   </div>
-                  <h5 className="mt-3">{patrocinador.titulo}</h5>
+                  <h5 className="mt-3" style={{ color: "#f89d34" }}>
+                    {patrocinador.titulo}
+                  </h5>
                 </div>
 
                 {/* Verso */}
@@ -95,7 +98,9 @@ export default function CardEmpresa() {
                     color: patrocinador.corTexto,
                   }}
                 >
-                  <h5 className="fw-bold mb-2" style={{ color: "#f89d34" }}>{patrocinador.titulo}</h5>
+                  <h5 className="fw-bold mb-2" style={{ color: "#f89d34" }}>
+                    {patrocinador.titulo}
+                  </h5>
                   <p className="fs-6" style={{ fontSize: "0.95rem" }}>
                     {patrocinador.descricao}
                   </p>

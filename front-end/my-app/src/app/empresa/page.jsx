@@ -1,5 +1,5 @@
-
 import CardEmpresa from "@/components/CardEmpresa/CardEmpresa";
+import EmpresaSeq from "@/components/EmpresaSeq/EmpresaSeq";
 import "./page.css";
 
 export default function EmpresaHome() {
@@ -63,10 +63,10 @@ export default function EmpresaHome() {
                 </div>
 
                 <div className="mt-5">
-                    <h2>Como funciona?</h2>
+                    <EmpresaSeq/>
                 </div>
 
-                <div className="careernest">
+                <div className="careernest mb-5 pb-5">
                     <h1>Por que escolher CareerNest</h1>
 
                     <p>Na CareerNest, entendemos que procurar emprego vai muito além de simplesmente enviar currículos.

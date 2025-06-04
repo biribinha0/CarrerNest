@@ -108,6 +108,30 @@ a {
   animation-duration: 3s;
 }
 
+.not-found-wrapper {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errado {
+  width: 60%; /* Reduzido para harmonia */
+  background-color: #f9f9f9; /* opcional, para contraste */
+  border-radius: 12px; /* opcional, suaviza bordas */
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); /* opcional, profundidade */
+}
+
+.not-found {
+  width: 35vh;
+  height: auto;
+}
+
+.text-laranja {
+  color: #d94f04;
+}
+
+
 @keyframes tri-spinner {
   100% {
     transform: rotate(1turn);
