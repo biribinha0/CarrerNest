@@ -1,0 +1,98 @@
+
+import CardEmpresa from "@/components/CardEmpresa/CardEmpresa";
+import "./page.css";
+
+export default function EmpresaHome() {
+  
+    return (
+        <>
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-12 col-md-6">
+                        <img src="/img/HomeEmpresa.png" className="img-fluid mt-4" alt="Home Empresa" />
+                    </div>
+                    <div className="textoright col-12 col-md-6">
+                        <p>
+                            A CareerNest, agência de estágios mais eficiente, a partir de um processo prático, eficiente e seguro,
+                            seleciona e gerencia os estagiários para sua empresa, unindo sempre inovação e tecnologia.
+                        </p>
+                    </div>
+                </div>
+
+        <CardEmpresa/>
+ 
+                <div className="bainner my-5">
+                    <div className="row align-items-center">
+                        <div className="textoright col-12 col-md-6 p-3">
+                            <p>Oferecemos oportunidades reais de aprendizado e crescimento profissional desde o primeiro estágio.</p>
+                        </div>
+                        <div className="col-12 col-md-6">
+                            <img src="/img/BannerHomeEmpresa.png" className="img-fluid mt-4" alt="Banner Empresa" />
+                        </div>
+                    </div>
+                </div>
+
+                <div className="my-5 beneficios-section">
+                    <h1 className="text-center mb-4">Benefícios para Empresas</h1>
+                    <div className="row align-items-center">
+                        <div className="col-12 col-md-6 text-center">
+                            <img src="/img/HomeEmpresa2.png" className="img-fluid" alt="Imagem Benefícios" />
+                        </div>
+
+                        <div className="col-12 col-md-6">
+                            <ul className="benefits-list">
+                                <li>
+                                    <i className="bi bi-megaphone-fill"></i>
+                                    <span>Divulgação de vagas de forma gratuita ou personalizada.</span>
+                                </li>
+                                <li>
+                                    <i className="bi bi-filter-square-fill"></i>
+                                    <span>Filtros inteligentes por curso, instituição, região e habilidades.</span>
+                                </li>
+                                <li>
+                                    <i className="bi bi-folder-symlink-fill"></i>
+                                    <span>Acesso a banco de talentos com currículos sempre atualizados.</span>
+                                </li>
+                                <li>
+                                    <i className="bi bi-tools"></i>
+                                    <span>Processo seletivo ágil e eficiente, com ferramentas integradas.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mt-5">
+                    <h2>Como funciona?</h2>
+                </div>
+
+                <div className="careernest">
+                    <h1>Por que escolher CareerNest</h1>
+
+                    <p>Na CareerNest, entendemos que procurar emprego vai muito além de simplesmente enviar currículos.
+                        É uma fase de expectativa, ansiedade e esperança. Por isso, criamos uma plataforma que coloca você,
+                        o candidato, no centro de tudo. Nosso compromisso é oferecer uma experiência moderna, transparente
+                        e humanizada — onde cada clique te aproxima de uma oportunidade real.</p>
+
+                    <p>Ao contrário de outros sites, na CareerNest você não encontra vagas desatualizadas ou anúncios
+                        duvidosos. Todas as empresas são verificadas, e cada vaga publicada passa por um processo de curadoria
+                        para garantir que você esteja se candidatando a oportunidades legítimas. Aqui, você navega com
+                        tranquilidade, sabendo que seu tempo e sua confiança estão sendo respeitados.</p>
+
+                    <p>Mais do que uma ferramenta de busca, queremos ser seus parceiros na evolução da carreira. Por isso,
+                        oferecemos conteúdos exclusivos, dicas práticas, orientações de currículo e entrevistas, e muito mais.
+                        Trabalhamos com tecnologia inteligente para conectar você a vagas que realmente combinam com seu perfil,
+                        aumentando suas chances de sucesso de forma rápida e eficiente.</p>
+
+                    <p> Na CareerNest, acreditamos que todo talento merece uma chance justa. Por isso, promovemos inclusão,
+                        diversidade e equidade nas oportunidades que divulgamos, contribuindo para um mercado de trabalho
+                        mais humano e acessível.</p>
+
+                    <p>Escolher a CareerNest é escolher um caminho mais claro, mais leve e mais eficaz rumo à sua próxima
+                        conquista profissional. Estamos aqui para caminhar com você — do primeiro cadastro até o “sim”
+                        que pode mudar sua vida.</p>
+                </div>
+            </div>
+        </>
+    );
+}

@@ -1,0 +1,138 @@
+:root {
+    --cinza: #f8f8fa;
+    --laranja: #bd4b0d;
+    --laranja-opacidade: #bd4b0da9;
+    --amarelo: #eda92a;
+    --laranja-claro: #d94f04;
+    --amarelo-claro: #fabe4e;
+    --verde-agua: #007172;
+    --verde-escuro: #025259
+}
+
+.btn-sair {
+    all: unset;
+    background-color: #FF0000;
+    color: #fff;
+    box-shadow: 0 2px 5px #00000054;
+    transition: .2s;
+}
+
+.btn-sair:hover {
+    background-color: #cc0202;
+    box-shadow: 0 2px 10px #00000081;
+}
+
+.btn-sair:active {
+    background-color: #FF0000;
+}
+
+.bg-preto {
+    background-color: #000;
+}
+
+.side-bar .nav-link {
+    color: #c6c1c1;
+    transition: .2s;
+}
+
+.side-bar .nav-link:hover {
+    box-shadow: 0 0 0 1px var(--laranja);
+    color: #fff;
+}
+
+.active {
+    background-color: var(--laranja) !important;
+    color: #fff;
+}
+
+.recrutamento {
+    max-width: auto;
+    display: inline-block;
+    position: relative;
+    border-bottom: 1px solid #ffffff48;
+}
+
+.empresa-logo {
+    width: 20%;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #000;
+}
+
+.active-page-container {
+    background-color: #f8f8fa;
+}
+
+
+@keyframes titulo-appear {
+    0% {
+        transform: translateX(-25px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.pagina-titulo {
+    max-width: fit-content;
+    display: inline-block;
+    position: relative;
+    border-bottom: 3px solid var(--laranja-claro);
+    animation: titulo-appear .3s ease forwards;
+}
+
+.content-area{
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 2px 2px #e0e0e0;
+}
+
+.side-bar{
+    position: relative;
+    z-index: 2;
+}
+.pagina-ativa{
+    background-color: #fff;
+    box-shadow: 0 0 3px #ccc;
+}
+
+.btn-empresa{
+    background-color: inherit;
+    color: #000;
+    border: none;
+}
+.btn-empresa:hover{
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+.seta-dropdown::before{
+  transition: transform 0.2s ease;
+}
+
+.btn-empresa.show .seta-dropdown::before {
+  transform: rotate(180deg);
+}
+
+.btn-empresa::after{
+    all: unset;
+}
+
+.btn-criar {
+    background-color: var(--verde-agua);
+    border: none;
+    color: #fff;
+}
+
+.btn-criar:hover{
+    background-color: var(--verde-escuro);
+}
+
+.btn-criar:active{
+    background-color: inherit;
+    border: none;
+    box-shadow: 0 0 0 1px var(--verde-agua);
+    color: var(--verde-agua) !important;
+}

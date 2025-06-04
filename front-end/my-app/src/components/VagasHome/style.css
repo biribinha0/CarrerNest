@@ -1,0 +1,37 @@
+.iconeCard {
+  font-size: 40px;
+  color: #f29325;
+}
+.cardMaior{
+    background-color: #ffffff;
+    border: 0px solid orange;
+    border-bottom: 2px solid orange;
+    border-left: 2px solid orange;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.201); 
+    width: 100%;
+}
+.tituloVagaCard{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+} 
+
+.botaoVaga {
+    color: #fff9ee;
+    background-color: #f29325;
+    border: none;
+    margin-top: 4px;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+   
+  .botaoVaga:hover {
+    background-color: #f89729;
+    border: none;
+    color: #fff9ee;
+  }
+  p{
+    font-size: smaller;
+    align-items: start;
+  }
