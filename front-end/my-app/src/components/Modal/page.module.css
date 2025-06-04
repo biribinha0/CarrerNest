@@ -1,0 +1,9 @@
+button.buttonSave{
+    background-color: var(--caribbean-current);
+    color: white;
+    border-radius: 12px;
+}
+
+button.buttonSave:hover {
+    background-color: var(--caribbean-current);
+}

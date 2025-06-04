@@ -140,3 +140,9 @@
 .searchvaga{
     width: 30%;
 }
+
+@media (max-width: 576px) {
+    .searchvaga{
+        width: 100%;
+    }
+}

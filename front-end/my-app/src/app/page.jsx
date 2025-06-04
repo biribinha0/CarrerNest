@@ -1,8 +1,11 @@
 import "./home.css";
 import VagasHome from "@/components/VagasHome/VagasHome.jsx";
 import PerguntasFrequentes from '@/components/PerguntasFrequentes/PerguntasFrequentes.jsx';
+import CarrosselEmpresas from "@/components/CarrosselEmpresas/CarrosselEmpresa";
 
 export default function Home() {
+
+
   return (
     <>
       <div className="container">
@@ -19,7 +22,7 @@ export default function Home() {
           </div>
         </div>
         <div className="p-3 mt-5">
-          <h2 className="fw-bold">Comece sua carreira pela <span>CareerNest</span></h2>
+          <h2 className="fw-bold">Comece sua carreira pela <span className="spanTitle">CareerNest</span></h2>
         </div>
         {/* input de pesquisa de vagas */}
         <div className="search-container container-fluid d-flex justify-content-center py-2 w-md-50">
@@ -38,12 +41,12 @@ export default function Home() {
 
         <div className="p-3 mt-5">
           <h2 className="fw-bold">Cadastre-se gratuitamente!</h2>
-          <h4>aproveite essa <span>oportunidade</span> imperdível!</h4>
+          <h4>aproveite essa <span className="spanTitle">oportunidade</span> imperdível!</h4>
         </div>
         <div className="timeline container position-relative">
-          <div className="linha-vertical-topo"></div>
-          <div className="linha-central-horizontal"></div>
-          <div className="linha-vertical-base"></div>
+          <div className="linha-vertical-topo rounded-4"></div>
+          <div className="linha-central-horizontal rounded-4"></div>
+          <div className="linha-vertical-base rounded-4"></div>
 
           {/* box1 */}
           <div className="row align-items-center my-5 timeline-item">
@@ -123,7 +126,7 @@ export default function Home() {
       <div className="container">
         <div className="p-3 mt-5">
           <h2 className="fw-bold"> Oque você procura? Escolha um de nossos portais</h2>
-          <p className="subtitulopage align-items-center text-center">A <span>CareerNest</span> oferece soluções para estudantes e empresas!! Escolha abaixo o portal ideal para a sua necessidade</p>
+          <p className="subtitulopage align-items-center text-center">A <span className="spanTitle">CareerNest</span> oferece soluções para estudantes e empresas!! Escolha abaixo o portal ideal para a sua necessidade</p>
         </div>
         <div className="row d-flex justify-content-center gap-4 flex-wrap py-5">
           <div className="col-4 mb3 mb-sm-0 d-flex justify-content-center align-items-center">
@@ -166,7 +169,7 @@ export default function Home() {
         </div>
         <PerguntasFrequentes />
       </div>
-      <div className="caixaLaranja bg-laranja container-fluid p-3">
+      <div className="caixaLaranja bg-laranja container-fluid p-3 mb-5">
         <div className="container">
           <div className="row p-3 my-4">
             <div className="col-md-6 d-flex justify-content-center align-items-center">
@@ -181,34 +184,47 @@ export default function Home() {
       </div>
 
       {/* missão visão e valores */}
-      <div className="borda container p-4 py-3  border-top border-bottom border-4 " style={{ height: 'auto' }}>
-        <div className="container d-flex flex-wrap align-items-center justify-content-center p-4 my-2">
-          <div className="col-md-3 d-flex flex-column align-items-center text-center">
-            <i className="bi bi-emoji-laughing" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+      <div className="borda container p-4 py-3 mb-5 border-top border-bottom border-3 " style={{ height: 'auto' }}>
+        <div className="mvv container text-center p-4">
+          <h1 className='mvvtitle fw-bold'>Nossa missão, visão e valores</h1>
+          <p>"Porque quem voa alto começa com um bom ninho."</p>
+        </div>
+        <div className="caixamvv row d-flex flex-wrap p-4 my-2 mb-5 rounded-5">
+          <div className="col-md-4 text-center">
+            <i className="bi bi-clipboard-check" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
             <div>
-              <p className="mb-0">Tá com você. Sempre</p>
+              <p className="mb-3">Missão</p>
+              <p className="mb-0 text-align-justify">Empoderar estudantes a iniciarem sua jornada profissional com confiança. Na CareerNest, nos dedicamos a tornar
+                o acesso ao mercado de trabalho mais simples, acessível e acolhedor, ajudando jovens a transformarem potencial em realização
+                profissional desde o estágio.</p>
             </div>
           </div>
-          <div className="col-md-3 d-flex flex-column align-items-center text-center">
-            <i className="bi bi-check2-circle" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+          <div className="col-md-4 text-center">
+            <i className="bi bi-lightbulb" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
             <div>
-              <p className="mb-0">É simplesmente simples.</p>
+              <p className="mb-3">Visão</p>
+              <p className="mb-0">Ser a principal plataforma de descoberta e desenvolvimento de talentos no Brasil, revolucionando o acesso
+                ao mercado de trabalho para estudantes e contribuindo para a construção de carreiras de impacto desde o primeiro passo.</p>
             </div>
           </div>
-          <div className="col-md-3 d-flex flex-column align-items-center text-center">
-            <i className="bi bi-chat-heart" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
+          <div className="col-md-4 text-center">
+            <i className="bi bi-heart" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
             <div>
-              <p className="mb-0">Valoriza quem você é.</p>
-            </div>
-          </div>
-          <div className="col-md-3 d-flex flex-column align-items-center text-center">
-            <i className="bi bi-star" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}></i>
-            <div>
-              <p className="mb-0">Sabe o caminho pra te guiar.</p>
+              <p className="mb-3">Valores</p>
+              <p className="mb-0 w-20">Acreditamos que cada começo importa. Valorizamos a escuta, o cuidado e o suporte a quem está dando seus
+                primeiros passos profissionais. Usamos tecnologia para criar conexões humanas e transformar o processo de busca por estágio em
+                algo simples e relevante.</p>
             </div>
           </div>
         </div>
       </div>
+      <div className="container">
+      
+       <CarrosselEmpresas/>
+
+      </div>
+
+
 
 
 

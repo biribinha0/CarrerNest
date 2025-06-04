@@ -25,23 +25,23 @@
 .texto-verde {
     color: var(--verde);
 }
-.vaga-form input,
+.vaga-form input.form-control,
 .vaga-form textarea,
 .vaga-form div.select__control {
     border: 1px solid var(--verde);
     border-radius: 10px;
     background-color: #fff ;
 }
-.vaga-form input:focus,
+.vaga-form input.form-control:focus,
 .vaga-form textarea:focus,
 .vaga-form div.select__control--is-focused {
     border: 1px solid var(--verde);
-    box-shadow: 0 0 0 .25rem var(--verde-opacidade);
+    box-shadow: 0 0 0 .25rem var(--verde-opacidade) !important;
 }
 .vaga-form select option:hover {
     background-color: var(--verde-opacidade);
 }
-.select__control input {
+.select__control input, input {
     box-shadow: none !important;
     background-color: inherit;
 }

@@ -1,5 +1,6 @@
 "use client"
 import Select from "react-select";
+import { useFieldArray, useForm } from "react-hook-form";
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
@@ -94,6 +95,9 @@ export default function CriarVaga() {
     ];
 
 
+
+
+
     return (
         <>
             <div className="rounded-5 pagina-ativa p-3 pt-0">
@@ -171,18 +175,16 @@ export default function CriarVaga() {
                                     ></textarea>
                                 </div>
 
-                                <div className="d-flex w-100 flex-column flex-md-row">
-                                    <div className="mb-3 col-12 col-md-6 pe-md-2">
+                                <div className="d-flex w-100 flex-column flex-xl-row">
+                                    <div className="mb-3 col-12 col-xl-5 pe-xl-2">
                                         <label htmlFor="remuneracao" className="form-label">Remuneração (R$)</label>
                                         <CurrencyInput
-                                            name="input-name"
+                                            name="remuneracao"
                                             className="form-control"
                                             id="remuneracao"
                                             value={vaga.remuneracao}
-                                            placeholder="Please enter a number"
                                             defaultValue={1000}
                                             decimalsLimit={2}
-                                            onValueChange={(value, name, values) => console.log(value, name, values)}
                                             onChange={
                                                 (e) => setVaga({
                                                     ...vaga, remuneracao: (e.target.value)
@@ -190,8 +192,8 @@ export default function CriarVaga() {
                                         />
                                     </div>
 
-                                    <div className="mb-3 col-12 col-md-6 ps-md-2">
-                                        <label htmlFor="carga_horaria" className="form-label">Carga Horária (h/semana)</label>
+                                    <div className="mb-3 col-12 col-xl-7 ps-xl-2">
+                                        <label htmlFor="carga_horaria" className="form-label">Carga Horária</label>
                                         <input
                                             type="number"
                                             className="form-control"
@@ -200,13 +202,38 @@ export default function CriarVaga() {
                                             onChange={(e) => setVaga({ ...vaga, carga_horaria: e.target.value })}
                                             required
                                         />
+                                        <>
+                                            <div className="form-check mt-3">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="dia"
+                                                    id="dia"
+                                                />
+                                                <label className="form-check-label" htmlFor="dia">
+                                                    h/dia
+                                                </label>
+                                            </div>
+                                            <div className="form-check">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="semana"
+                                                    id="semana"
+                                                />
+                                                <label className="form-check-label" htmlFor="semana">
+                                                    h/semana
+                                                </label>
+                                            </div>
+                                        </>
+
                                     </div>
                                 </div>
 
                                 <div className="mb-3 col-12">
                                     <label htmlFor="tipo" className="form-label">Tipo da Vaga</label>
                                     <Select
-                                        id="tipo"   
+                                        id="tipo"
                                         options={tipos}
                                         placeholder="Selecione o tipo"
                                         value={tipos.find(option => option.value === vaga.tipo)}

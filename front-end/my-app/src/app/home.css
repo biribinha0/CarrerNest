@@ -64,10 +64,10 @@ h4 {
   color: #025259;
 }
 
-span {
-  color: #f29325;
+.spanTitle{
+  color: var(--carrot-orange);
+  font-weight: bold;
 }
-
 .timeline {
   position: relative;
   padding: 2rem 0;
@@ -78,8 +78,8 @@ span {
   top: 0;
   left: 30%;
   height: 100%;
-  width: 20px;
-  background: linear-gradient(100deg, #d94f04, #f29325);
+  width: 30px;
+  background: linear-gradient(107deg, #f29325, #d94f04);
   z-index: 1;
 }
 
@@ -87,9 +87,9 @@ span {
   position: absolute;
   top: 0;
   left: 30%;
-  height: 20px;
+  height: 30px;
   width: 100%;
-  background: linear-gradient(100deg, #f29325, #d94f04);
+  background: linear-gradient(177deg, #ffbd71, #d94f04);
   transform: translateX(-100%);
   z-index: 1;
 }
@@ -98,9 +98,9 @@ span {
   position: absolute;
   top: 100%;
   right: 70%;
-  height: 20px;
+  height: 30px;
   width: 100%;
-  background: linear-gradient(100deg, #f29325, #d94f04);
+  background: linear-gradient(107deg, #f29325, #d94f04);
   transform: translateX(100%);
   z-index: 1;
 }
@@ -189,4 +189,11 @@ span {
 .titulograndemenor{
   color: #fff7ef;
   font-size: 4rem;
+}
+.borda{
+  color: var( --caribbean-current)
+}
+.caixamvv{
+  background-color: #f5f5f5;
+  box-shadow: 0 0px 30px rgba(0, 0, 0, 0.125);
 }

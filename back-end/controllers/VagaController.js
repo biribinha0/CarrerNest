@@ -34,8 +34,8 @@ const listarVagasPorEmpresaController = async (req, res) => {
 
             vagasEmpresa.map(async (vaga) => {
                 const candidaturas = await listarCandidaturasPorVaga(vaga.id) || [];
-                const quantidade_candidaturas = candidaturas.length ;
-                
+                const quantidade_candidaturas = candidaturas.length;
+
                 return {
                     ...vaga,
                     candidatos_qntd: quantidade_candidaturas

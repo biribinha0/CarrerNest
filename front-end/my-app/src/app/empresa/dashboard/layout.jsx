@@ -76,7 +76,7 @@ export default function DashboardLayout({ children }) {
         <div className="container-fluid mx-auto">
             <div className="row d-flex flex-wrap px-sm-4 px-md-5">
                 <Sidebar page={page} setPage={setPage}></Sidebar>
-                <div className="col-12 col-sm-12 col-md-9 col-xl-9 col-xxl-10 py-5 shadow">
+                <div className="col-12 col-sm-12 col-md-9 col-xl-9 col-xxl-10 pt-5 shadow">
                     <div className="row px-4 content-area">
                         <div className="empresa-user d-flex flex-column flex-sm-row justify-content-center justify-content-md-between align-items-center mb-3 dropdown">
                             <div className="d-flex d-sm-block mb-3 mb-md-0 justify-content-center justify-content-md-start flex-wrap">

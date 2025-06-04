@@ -3,7 +3,6 @@ import EmpresaSeq from "@/components/EmpresaSeq/EmpresaSeq";
 import "./page.css";
 
 export default function EmpresaHome() {
-  
     return (
         <>
             <div className="container">
@@ -19,8 +18,8 @@ export default function EmpresaHome() {
                     </div>
                 </div>
 
-        <CardEmpresa/>
- 
+                <CardEmpresa />
+
                 <div className="bainner my-5">
                     <div className="row align-items-center">
                         <div className="textoright col-12 col-md-6 p-3">
@@ -63,12 +62,11 @@ export default function EmpresaHome() {
                 </div>
 
                 <div className="mt-5">
-                    <EmpresaSeq/>
+                    <EmpresaSeq />
                 </div>
 
                 <div className="careernest mb-5 pb-5">
                     <h1>Por que escolher CareerNest</h1>
-
                     <p>Na CareerNest, entendemos que procurar emprego vai muito além de simplesmente enviar currículos.
                         É uma fase de expectativa, ansiedade e esperança. Por isso, criamos uma plataforma que coloca você,
                         o candidato, no centro de tudo. Nosso compromisso é oferecer uma experiência moderna, transparente
@@ -76,15 +74,13 @@ export default function EmpresaHome() {
 
                     <p>Ao contrário de outros sites, na CareerNest você não encontra vagas desatualizadas ou anúncios
                         duvidosos. Todas as empresas são verificadas, e cada vaga publicada passa por um processo de curadoria
-                        para garantir que você esteja se candidatando a oportunidades legítimas. Aqui, você navega com
-                        tranquilidade, sabendo que seu tempo e sua confiança estão sendo respeitados.</p>
+                        para garantir que você esteja se candidatando a oportunidades legítimas.</p>
 
                     <p>Mais do que uma ferramenta de busca, queremos ser seus parceiros na evolução da carreira. Por isso,
                         oferecemos conteúdos exclusivos, dicas práticas, orientações de currículo e entrevistas, e muito mais.
-                        Trabalhamos com tecnologia inteligente para conectar você a vagas que realmente combinam com seu perfil,
-                        aumentando suas chances de sucesso de forma rápida e eficiente.</p>
+                        Trabalhamos com tecnologia inteligente para conectar você a vagas que realmente combinam com seu perfil.</p>
 
-                    <p> Na CareerNest, acreditamos que todo talento merece uma chance justa. Por isso, promovemos inclusão,
+                    <p>Na CareerNest, acreditamos que todo talento merece uma chance justa. Por isso, promovemos inclusão,
                         diversidade e equidade nas oportunidades que divulgamos, contribuindo para um mercado de trabalho
                         mais humano e acessível.</p>
 
@@ -92,7 +88,57 @@ export default function EmpresaHome() {
                         conquista profissional. Estamos aqui para caminhar com você — do primeiro cadastro até o “sim”
                         que pode mudar sua vida.</p>
                 </div>
-            </div>
-        </>
-    );
+
+                 {/* Seção de Depoimentos */}
+                <div className="depoimentos-section container my-5">
+                 <h2 className="text-center mb-4 titulo-depoimentos">O que dizem nossos parceiros</h2>
+
+                 <div className="card-depoimento d-flex align-items-center">
+                     <div className="imagem-com-info">
+                         <img src="/img/comentarios/MarianaSilva.png" alt="Mariana Silva" className="img-depoimento" />
+                         <div className="info-depoimento">
+                             <h6>Mariana Silva</h6>
+                             <small>RH, TechNova</small>
+                         </div>
+                     </div>
+                     <p className="comentario">
+                         "A CareerNest nos ajudou a encontrar estagiários altamente qualificados de forma rápida e eficaz. 
+                         A plataforma é muito intuitiva, o suporte é ágil e conseguimos reduzir o tempo do nosso processo seletivo pela metade. 
+                         Estamos muito satisfeitos com os resultados!"
+                     </p>
+                 </div>
+
+                 <div className="card-depoimento d-flex align-items-center">
+                     <div className="imagem-com-info">
+                         <img src="/img/comentarios/CarlosMendes.png" alt="Carlos Mendes" className="img-depoimento" />
+                         <div className="info-depoimento">
+                             <h6>Carlos Mendes</h6>
+                             <small>Diretor, InovaCorp</small>
+                         </div>
+                     </div>
+                     <p className="comentario">
+                         "A plataforma da CareerNest é intuitiva e o suporte é excelente. 
+                         Conseguimos divulgar vagas personalizadas para nossos projetos e atrair candidatos com o perfil ideal. 
+                         Hoje, consideramos a CareerNest uma parceira essencial em nosso processo de recrutamento."
+                     </p>
+                 </div>
+
+                 <div className="card-depoimento d-flex align-items-center">
+                     <div className="imagem-com-info">
+                         <img src="/img/comentarios/FernandaLopes.png" alt="Fernanda Lopes" className="img-depoimento" />
+                         <div className="info-depoimento">
+                             <h6>Fernanda Lopes</h6>
+                             <small>Coordenadora, BioStartups</small>
+                         </div>
+                     </div>
+                     <p className="comentario">
+                         "Recomendo a CareerNest para qualquer empresa que deseja contratar estagiários com agilidade e confiança. 
+                         A curadoria das vagas garante candidatos engajados e qualificados, e o processo é muito mais simples e rápido. 
+                         Nos ajudou a crescer nossa equipe com segurança."
+                     </p>
+                 </div>
+             </div>
+         </div>
+     </>
+ );
 }

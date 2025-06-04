@@ -1,8 +1,8 @@
-import { read, create, deleteRecord } from "../config/database.js";
+import { readAll, create, deleteRecord } from "../config/database.js";
 
 const listarCandidaturasPorCandidato = async (candidatoId) => {
     try {
-        return await read('candidaturas', `candidato_id = ${candidatoId}`);
+        return await readAll('candidaturas', `candidato_id = ${candidatoId}`);
     } catch (error) {
         console.error('Erro ao listar candidaturas por candidato: ', error);
         throw error
@@ -11,7 +11,7 @@ const listarCandidaturasPorCandidato = async (candidatoId) => {
 
 const listarCandidaturasPorVaga = async (vagaId) => {
     try {
-        return await read('candidaturas', `vaga_id = ${vagaId}`);
+        return await readAll('candidaturas', `vaga_id = ${vagaId}`);
     } catch (error) {
         console.error('Erro ao listar candidaturas por vaga: ', error);
         throw error
