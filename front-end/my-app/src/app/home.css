@@ -52,14 +52,17 @@
 .buttonSearch:hover {
   color: #d94f04;
 }
-
-
-h2 {
-  text-align: center;
-  color: #025259;
+.buttonSearch:active{
+  color: #d94f04;
 }
 
-h4 {
+
+.procura {
+  text-align: center;
+  color: var(--midnight-green);
+}
+
+.subtitulopage {
   text-align: center;
   color: #025259;
 }
@@ -76,9 +79,9 @@ h4 {
 .linha-central-horizontal {
   position: absolute;
   top: 0;
-  left: 30%;
+  left: 28%;
   height: 100%;
-  width: 30px;
+  width: 35px;
   background: linear-gradient(107deg, #f29325, #d94f04);
   z-index: 1;
 }
@@ -87,7 +90,7 @@ h4 {
   position: absolute;
   top: 0;
   left: 30%;
-  height: 30px;
+  height: 35px;
   width: 100%;
   background: linear-gradient(177deg, #ffbd71, #d94f04);
   transform: translateX(-100%);
@@ -96,9 +99,9 @@ h4 {
 
 .linha-vertical-base {
   position: absolute;
-  top: 100%;
-  right: 70%;
-  height: 30px;
+  top: 99%;
+  right: 72%;
+  height: 35px;
   width: 100%;
   background: linear-gradient(107deg, #f29325, #d94f04);
   transform: translateX(100%);
@@ -115,18 +118,9 @@ h4 {
   justify-content: center;
   align-items: center;
 }
-
-.fundo-img {
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  background-color: #004d4d;
-  border-radius: 1rem;
-  z-index: 0;
-  left: 10px;
-  top: 10px;
+.titlebox{
+  font-size: 50px;
 }
-
 .timeline-item img {
   z-index: 2;
 }
@@ -142,7 +136,7 @@ h4 {
     flex-direction: column;
   }
   .bg-branco{
-    background-color: #fff;
+    background-color: #f2efef;
     box-shadow: 0 5px 20px #00000015;
   }
 
@@ -196,4 +190,48 @@ h4 {
 .caixamvv{
   background-color: #f5f5f5;
   box-shadow: 0 0px 30px rgba(0, 0, 0, 0.125);
+}
+.tituloempresas{
+  color: var(--midnight-green);
+}
+.spanempresas{
+  color: var(--carrot-orange);
+  font-size: xx-large;
+}
+.subtitulo{
+  font-size: large;
+  color: var(--midnight-green);
+}
+.caroussel-container{
+  position: relative;
+  overflow: hidden;
+}
+.caroussel-container::before, .caroussel-container::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.caroussel-container::before{
+  left: 0;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgba(255,255,255,0));;
+}
+.caroussel-container::after{
+  right: 0;
+  background: linear-gradient(to left, rgb(255, 255, 255), rgba(255,255,255,0));;
+}
+.titlebox{
+  color: var(--midnight-green);
+  font-family: poppins;
+}
+.boxspan{
+  color: var(--carrot-orange);
+  font-family: poppins;
+}
+.paragrafozinho{
+  color: black;
+  font-family: poppins;
 }

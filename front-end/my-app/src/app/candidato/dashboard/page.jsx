@@ -6,6 +6,7 @@ import Loading from '@/app/loading';
 import CandidatoVagas from "@/components/CandidatoDashboard/CandidatoVagas";
 import CandidatoCandidaturas from "@/components/CandidatoDashboard/CandidatoCandidaturas";
 import "./dashboard.css"
+import Banner from '@/components/corPerfil/page';
 
 export default function CandidatoDashboard({ params }) {
     const API_URL = "http://localhost:3001";
@@ -81,7 +82,7 @@ export default function CandidatoDashboard({ params }) {
         <div className="container mx-auto py-5">
             <div className="row d-flex flex-wrap-reverse">
                 <div className="col-12 col-md-9">
-                    <h1>Dashboard do <span className="txt-laranja">Candidato</span></h1>
+
                     <h3>
                         Seja bem-vind{saudacao}, <span className="candidato-nome">{usuario.nome}</span>
                     </h3>

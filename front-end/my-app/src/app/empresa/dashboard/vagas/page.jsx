@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Loading from '@/app/loading';
 import { jwtDecode } from "jwt-decode";
 import Link from "next/link";
-import Modal from "@/components/Modal/page"
+import ModalEditVaga from "@/components/Modal/page"
 
 export default function Vagas() {
     const [vagas, setVagas] = useState([]);
@@ -100,7 +100,7 @@ export default function Vagas() {
                                                 {v.candidatos_qntd}
                                             </span>
                                             <span className="col-12 col-md-3 text-center text-md-end">
-                                                <Modal />
+                                                <ModalEditVaga  vaga={v} />
                                                 <i className="bi bi-trash p-2 fs-5"></i>
                                             </span>
                                         </div>
