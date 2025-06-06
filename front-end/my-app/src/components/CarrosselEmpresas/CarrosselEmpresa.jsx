@@ -31,7 +31,7 @@ export default function CarrosselEmpresas() {
         <SwiperSlide key={empresa.id} className="carrossel">
           <div className="d-flex justify-content-center align-items-center">
             <img
-              src={empresa.logo
+              src={empresa.logo}
               className="rounded-full w-20 h-20 object-cover"
             />
           </div>

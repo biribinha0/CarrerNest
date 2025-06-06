@@ -5,7 +5,7 @@ const criarNotificacao = async (empresaId, mensagem) => {
         return await create('notificacoes', {
             empresa_id: empresaId,
             mensagem,
-            status: 'nao_vista'
+            visualizado: false
         });
     } catch (error) {
         console.error('Erro ao criar notificação: ', error);

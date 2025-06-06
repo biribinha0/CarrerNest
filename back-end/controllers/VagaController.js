@@ -105,44 +105,48 @@ const obterVagaPorIdController = async (req, res) => {
 
 
 const criarVagaController = async (req, res) => {
-    try {
-        const {
-            empresa_id,
-            titulo,
-            descricao,
-            atividades,
-            requisitos,
-            beneficios,
-            remuneracao,
-            carga_horaria,
-            tipo,
-            curso_desejado,
-            localizacao
-        } = req.body;
+  try {
+    console.log('Dados recebidos:', req.body);
+    const {
+      empresa_id,
+      titulo,
+      descricao,
+      atividades,
+      requisitos,
+      beneficios,
+      remuneracao,
+      carga_horaria,
+      tipo,
+      curso_desejado,
+      localizacao
+    } = req.body;
 
-        const vagaData = {
-            empresa_id: empresa_id,
-            titulo: titulo,
-            descricao: descricao,
-            atividades: atividades,
-            requisitos: requisitos,
-            beneficios: beneficios,
-            remuneracao: remuneracao,
-            carga_horaria: carga_horaria,
-            tipo: tipo,
-            curso_desejado: curso_desejado,
-            localizacao: localizacao
-        };
+    const vagaData = {
+      empresa_id,
+      titulo,
+      descricao,
+      atividades,
+      requisitos,
+      beneficios,
+      remuneracao,
+      carga_horaria,
+      tipo,
+      curso_desejado,
+      localizacao
+    };
 
-        const vagaId = await criarVaga(vagaData);
-        await criarNotificacao(empresa_id, `Sua vaga "${titulo}" foi publicada com sucesso.`);
+    const vagaId = await criarVaga(vagaData);
+    console.log('ID da vaga criada:', vagaId);
 
-        res.status(201).json({ mensagem: 'Vaga criada com sucesso', vagaId });
-    } catch (error) {
-        console.error('Erro ao criar vaga: ', error);
-        res.status(500).json({ mensagem: 'Erro ao criar vaga' });
-    }
-}
+    await criarNotificacao(empresa_id, `Sua vaga "${titulo}" foi publicada com sucesso.`);
+
+    res.status(201).json({ mensagem: 'Vaga criada com sucesso', vagaId });
+  } catch (error) {
+    console.error('Erro ao criar vaga: ', error);
+    res.status(500).json({ mensagem: 'Erro ao criar vaga' });
+  }
+};
+
 
 const atualizarVagaController = async (req, res) => {
     try {

@@ -54,3 +54,21 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #292929 !important;
 }
 
+.btn-adicionar{
+    background-color: inherit;
+    border: 1px solid var(--verde);
+    color: var(--verde);
+}
+.btn-adicionar:hover{
+    background-color: #007172;
+    color: #fff;
+}
+.btn-excluir{
+    background-color: inherit;
+    border: 1px solid #ff0000;
+    color:#ff0000;
+}
+.btn-excluir:hover{
+    background-color: #ff0000;
+    color: #fff;
+}
