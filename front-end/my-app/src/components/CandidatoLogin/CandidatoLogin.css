@@ -62,7 +62,9 @@ input:-webkit-autofill {
     background-color: var(--laranja);
 }
 
-
+h4,h1{
+   color: #bd4b0d; 
+}
 .form-container {
     max-width: 350px;
     width: 100%;

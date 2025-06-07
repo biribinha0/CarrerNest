@@ -8,7 +8,9 @@
     --verde-claro: #038a7e;
     --verde-opacidade: #038a7e6b;
 }
-
+h4{
+    color: #007172;
+}
 .login-empresa-form .form-label {
     text-align: left;
     display: block;

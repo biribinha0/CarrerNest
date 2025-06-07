@@ -1,6 +1,12 @@
+"use client"
+import { useEffect } from 'react';
 import './Footer.css';
+import { usePathname } from 'next/navigation';
+
 
 export default function Footer() {
+    const pathName = usePathname();
+    if (pathName.startsWith('/empresa/dashboard')) return;
     return (
         <footer className="footer">
             <div className="container">

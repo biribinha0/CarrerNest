@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
+import './Carrossel.css';
 
 export default function CarrosselEmpresas() {
 
@@ -22,17 +23,31 @@ export default function CarrosselEmpresas() {
 
   return (
     <Swiper
-      spaceBetween={30}
-      loop={true}
-      autoplay={{ delay: 2500, disableOnInteraction: false }}
       modules={[Autoplay]}
+      spaceBetween={10}
+      speed={3000}
+      slidesPerView={4}
+      autoplay={{ delay: 0, disableOnInteraction: false }}
+      loop={true}
+      breakpoints={{
+        0: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 3,
+        }
+      }}
     >
       {empresas.map((empresa) => (
         <SwiperSlide key={empresa.id} className="carrossel">
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex justify-content-center align-items-center p-4">
             <img
               src={empresa.logo}
-              className="rounded-full w-20 h-20 object-cover"
+              className="empresaslogo"
+              style={{ width: 260, height: 260, objectFit: 'cover', borderRadius: '100%' }}
             />
           </div>
         </SwiperSlide>

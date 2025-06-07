@@ -45,12 +45,12 @@ export default function Vaga({ params }) {
                             <i className="bi bi-geo-alt-fill"></i> {vaga.localizacao}
                         </span>
                     </div>
-                    <div className="row w-100">
+                    <div className="row w-100 g-3">
 
                         {Array.isArray(candidatos) && candidatos.length > 0 ? (
                             candidatos.map((candidato, index) => (
-                                <div key={index}>
-                                    <CardCandidato id={candidato.candidato_id} />
+                                <div key={index} className="col-12 col-lg-6 d-flex">
+                                    <CardCandidato candidato_id={candidato.candidato_id} data_candidatura={candidato.data_candidatura}/>
                                 </div>
                             ))) : 'Nenhum usuario se candidatou a essa vaga'}
                     </div>

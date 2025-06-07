@@ -1,16 +1,17 @@
 import Link from "next/link";
+import  Styles from './CardVaga.css'
 
 export default function CardVaga({ vaga }) {
     return (
         <div className="card" >
-            <div className="card-body d-flex flex-column justify-content-between">
-                <div className="mb-2">
-
-                    <h5 className="card-title">{vaga.titulo}</h5>
-                    <h6 className="card-subtitle mb-2 text-body-secondary">{vaga.localizacao}</h6>
-                    <p className="card-text">
+            <div className="cardVaga card-body d-flex flex-column justify-content-between">
+                <div className="titlesection mb-2">
+                    <h5 className={`${Styles.title} card-title`}>{vaga.titulo}</h5>
+                    <h6 className={`${Styles.title} card-subtitle mb-2 text-body-secondary`}>{vaga.localizacao}</h6>
+                    <p className={`${Styles.description}card-text`}>
                         {vaga.descricao}
                     </p>
+                    <div className={Styles.linha}> pp</div>
                 </div>
                 <div className="d-flex flex-column">
                     <p className="card-text">Remuneração: {parseFloat(vaga.remuneracao).toLocaleString("pt-BR", { style: "currency", currency: 'brl' })}</p>

@@ -14,17 +14,18 @@ export default function CriarVaga() {
         empresa_id: '',
         titulo: '',
         descricao: '',
+        funcao: '',
         atividades: '',
         requisitos: '',
         beneficios: '',
         remuneracao: '',
+        idiomas: '',
         carga_horaria: '',
         tipo: '',
         curso_desejado: '',
         localizacao: '',
         unidade_carga: 'h/dia'
     })
-
 
     const API_URL = 'http://localhost:3001';
 
@@ -52,6 +53,17 @@ export default function CriarVaga() {
             });
     }, []);
 
+    const idiomas = [
+        { value: "Inglês (leitura técnica)", label: "Inglês (leitura técnica)" },
+        { value: "Inglês", label: "Inglês" },
+        { value: "Espanhol", label: "Espanhol" },
+        { value: "Mandarim", label: "Mandarim" },
+        { value: "Alemão", label: "Alemão" },
+        { value: "Francês", label: "Francês" },
+        { value: "Italiano", label: "Italiano" },
+        { value: "Japonês", label: "Japonês" }
+    ];
+
     const tipos = [
         { value: "Presencial", label: "Presencial" },
         { value: "Híbrido", label: "Híbrido" },
@@ -76,6 +88,10 @@ export default function CriarVaga() {
         { value: "Suporte Técnico em Informática", label: "Suporte Técnico em Informática" },
         { value: "TI", label: "TI" }
     ];
+
+
+
+
     const { register, handleSubmit, control } = useForm({
         defaultValues: {
             atividades: [''],
@@ -96,6 +112,11 @@ export default function CriarVaga() {
         name: "beneficios"
     });
 
+    useEffect(() => {
+        appendAtividade('')
+        appendRequisito('')
+        appendBeneficio('')
+    }, [])
     const handleCargaHorariaChange = (e) => {
         const onlyNumbers = e.target.value.replace(/\D/g, '');
         setVaga({ ...vaga, carga_horaria: `${onlyNumbers} ${vaga.unidade_carga}` });
@@ -142,9 +163,6 @@ export default function CriarVaga() {
                 console.error("Erro ao criar vaga:", err);
             });
     };
-
-
-    console.log(vaga)
     return (
         <>
             <div className="rounded-5 pagina-ativa p-3 pt-0">
@@ -154,7 +172,8 @@ export default function CriarVaga() {
                         <Link
                             className=" small text-black opacity-50 d-block"
                             href={'/empresa/dashboard/vagas'}>
-                            <i className="bi bi-caret-left"></i> Voltar para Vagas
+                            <i className="bi bi-caret-left"></i>
+                            Voltar
                         </Link>
                         Criar Vaga
                     </div>
@@ -187,14 +206,27 @@ export default function CriarVaga() {
                                     ></textarea>
                                 </div>
                                 <div className="mb-3 col-12">
+                                    <label htmlFor="funcao" className="form-label">Função</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="funcao"
+                                        value={vaga.funcao}
+                                        onChange={(e) => setVaga({ ...vaga, funcao: e.target.value })}
+                                        required
+                                    />
+                                </div>
+                                <div className="mb-3 col-12">
                                     <label className="form-label">Atividades</label>
                                     {atividadesFields.map((field, index) => (
                                         <div key={field.id} className="d-flex mb-2">
                                             <input
                                                 {...register(`atividades.${index}`)}
-                                                className="form-control me-2"
+                                                className="form-control"
                                             />
-                                            <button type="button" className="btn btn-excluir" onClick={() => removeAtividade(index)}>Remover</button>
+                                            {index >= 1 && <  button type="button" className="btn btn-excluir ms-2" onClick={() => removeAtividade(index)}>
+                                                <i className="bi bi-trash m-0 p-0"></i>
+                                            </button>}
                                         </div>
                                     ))}
                                     <button type="button" className="btn btn-adicionar" onClick={() => appendAtividade('')}>Adicionar Atividade</button>
@@ -206,9 +238,11 @@ export default function CriarVaga() {
                                         <div key={field.id} className="d-flex mb-2">
                                             <input
                                                 {...register(`requisitos.${index}`)}
-                                                className="form-control me-2"
+                                                className="form-control"
                                             />
-                                            <button type="button" className="btn btn-excluir" onClick={() => removeRequisito(index)}>Remover</button>
+                                            {index >= 1 && <button type="button" className="btn btn-excluir ms-2" onClick={() => removeRequisito(index)}>
+                                                <i className="bi bi-trash m-0 p-0"></i>
+                                            </button>}
                                         </div>
                                     ))}
                                     <button type="button" className="btn btn-adicionar" onClick={() => appendRequisito('')}>Adicionar Requisito</button>
@@ -220,9 +254,11 @@ export default function CriarVaga() {
                                         <div key={field.id} className="d-flex mb-2">
                                             <input
                                                 {...register(`beneficios.${index}`)}
-                                                className="form-control me-2"
+                                                className="form-control"
                                             />
-                                            <button type="button" className="btn btn-excluir" onClick={() => removeBeneficio(index)}>Remover</button>
+                                            {index >= 1 && <button type="button" className="btn btn-excluir ms-2" onClick={() => removeBeneficio(index)}>
+                                                <i className="bi bi-trash m-0 p-0"></i>
+                                            </button>}
                                         </div>
                                     ))}
                                     <button type="button" className="btn btn-adicionar" onClick={() => appendBeneficio('')}>Adicionar Benefício</button>
@@ -257,32 +293,47 @@ export default function CriarVaga() {
                                             onChange={handleCargaHorariaChange}
                                             required
                                         />
+                                        <div className="forms-check d-flex align-items-center mt-3 gap-4">
+                                            <div className="form-check">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="unidade"
+                                                    id="dia"
+                                                    checked={vaga.unidade_carga === 'h/dia'}
+                                                    onChange={() => handleUnidadeChange('h/dia')}
+                                                />
+                                                <label className="form-check-label" htmlFor="dia">h/dia</label>
+                                            </div>
 
-                                        <div className="form-check mt-3">
-                                            <input
-                                                className="form-check-input"
-                                                type="radio"
-                                                name="unidade"
-                                                id="dia"
-                                                checked={vaga.unidade_carga === 'h/dia'}
-                                                onChange={() => handleUnidadeChange('h/dia')}
-                                            />
-                                            <label className="form-check-label" htmlFor="dia">h/dia</label>
-                                        </div>
-
-                                        <div className="form-check">
-                                            <input
-                                                className="form-check-input"
-                                                type="radio"
-                                                name="unidade"
-                                                id="semana"
-                                                checked={vaga.unidade_carga === 'h/semana'}
-                                                onChange={() => handleUnidadeChange('h/semana')}
-                                            />
-                                            <label className="form-check-label" htmlFor="semana">h/semana</label>
+                                            <div className="form-check">
+                                                <input
+                                                    className="form-check-input"
+                                                    type="radio"
+                                                    name="unidade"
+                                                    id="semana"
+                                                    checked={vaga.unidade_carga === 'h/semana'}
+                                                    onChange={() => handleUnidadeChange('h/semana')}
+                                                />
+                                                <label className="form-check-label" htmlFor="semana">h/semana</label>
+                                            </div>
                                         </div>
                                     </div>
 
+                                </div>
+                                <div className="mb-3 col-12">
+                                    <label htmlFor="idiomas" className="form-label">Idiomas</label>
+                                    <Select
+                                        isMulti
+                                        id="idiomas"
+                                        options={idiomas}
+                                        placeholder="Selecione os idiomas desejados"
+                                        value={idiomas.filter(option => vaga.idiomas?.includes(option.value))}
+                                        onChange={(options) => setVaga({ ...vaga, idiomas: options ? options.map(opt => opt.value) : [] })}
+                                        required
+                                        className="basic-multi-select"
+                                        classNamePrefix="select"
+                                    />
                                 </div>
 
                                 <div className="mb-3 col-12">
@@ -300,7 +351,7 @@ export default function CriarVaga() {
                                 </div>
 
                                 <div className="mb-3 col-12">
-                                    <label htmlFor="curso_desejado" className="form-label">Curso Desejado</label>
+                                    <label htmlFor="curso_desejado" className="form-label">Cursos Desejados</label>
                                     <Select
                                         isMulti
                                         id="curso_desejado"

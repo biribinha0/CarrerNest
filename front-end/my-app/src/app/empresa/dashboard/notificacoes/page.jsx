@@ -28,40 +28,46 @@ export default function Notificacoes() {
     }, []);
     if (carregando) return <Loading></Loading>
     return (
-        <div className="rounded-5 pagina-ativa p-3">
-            <div className="rounded-4 bg-white p-3 d-flex flex-column justify-content-end">
-                <div className="d-flex justify-content-end align-items-center border-bottom pb-2">
-                    <div className="form-control searchvaga p-3 rounded-5 d-flex ">
-                        <i className="bi bi-search pe-3 opacity-50"></i>
-                        <input type="text" style={{ all: 'unset' }} placeholder="Buscar..." />
+        <>
+            <div className="d-flex flex-row-reverse p-2">
+                <div className="form-control searchvaga p-2 rounded-5 d-flex w-100 w-md-auto">
+                    <i className="bi bi-search pe-2 opacity-50"></i>
+                    <input type="text" className="flex-grow-1 border-0 bg-transparent" placeholder="Buscar..." />
 
-                    </div>
+
                 </div>
+            </div>
+            <div className="rounded-5 pagina-ativa p-3" style={{ minHeight: '100vh', overflowX: 'hidden' }}>
+                <div className="rounded-4 bg-white p-3 d-flex flex-column justify-content-end">
+                    <div className="d-flex justify-content-end align-items-center border-bottom pb-2">
+                    </div>
 
-                {notificacoes.map((n, index) => (
-                    <div
-                        key={index}
-                        className="d-flex flex-wrap justify-content-between align-items-center py-3 border-bottom px-0 px-sm-5"
-                    >
-                        <div className="d-flex align-items-center gap-2 col-12 col-sm-10">
-                            <input type="checkbox" className="form-check-input" />
-                            <span className="p-2 px-sm-4 py-sm-0 text-black">
-                                {n.mensagem}
+                    {notificacoes.map((n, index) => (
+                        <div
+                            key={index}
+                            className="d-flex justify-content-between align-items-center py-3 border-bottom px-3 px-md-5">
+                            <div className="d-flex align-items-center gap-2 col-10">
+                                <input type="checkbox" className="form-check-input" />
+                                <span className="px-4 text-black">
+                                    {n.mensagem}
+                                </span>
+                            </div>
+                            <span className="text-muted col-2 text-black opacity-75" style={{ fontSize: '0.875rem' }}>
+                                {new Date(n.criado_em).toLocaleString('pt-BR', {
+                                    day: '2-digit',
+                                    month: 'long',
+                                    year: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}
+
+
                             </span>
                         </div>
-                        <span className="text-muted col-12 col-sm-2 text-black text-center opacity-75" style={{ fontSize: '0.875rem' }}>
-                            {new Date(n.criado_em).toLocaleString('pt-BR', {
-                                day: '2-digit',
-                                month: 'long',
-                                year: 'numeric',
-                                hour: '2-digit',
-                                minute: '2-digit'
-                            })}
+                    ))}
+                </div>
 
-                        </span>
-                    </div>
-                ))}
             </div>
-        </div>
+        </>
     )
 }
