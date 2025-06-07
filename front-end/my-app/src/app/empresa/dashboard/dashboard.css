@@ -166,6 +166,7 @@ html {
     min-height: 100vh;
 }
 
+<<<<<<< HEAD
 .card{
     background-color: #f1f1f1;
     color: #000;
@@ -174,6 +175,8 @@ html {
     background-color: #fafafa;
 }
 
+=======
+>>>>>>> d008e10f71db4ee9768002553947319c5585d2a1
 
 @media (max-width: 576px) {
     .searchvaga{
