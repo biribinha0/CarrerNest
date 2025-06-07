@@ -4,40 +4,11 @@ import VagasHome from "@/components/VagasHome/VagasHome.jsx";
 import PerguntasFrequentes from '@/components/PerguntasFrequentes/PerguntasFrequentes.jsx';
 import CarrosselEmpresas from "@/components/CarrosselEmpresas/CarrosselEmpresa";
 import { useState, useEffect } from "react";
-<<<<<<< HEAD
-import Link from "next/link";
 
 export default function Home() {
   const [vagas, setVagas] = useState([])
   const [searchVaga, setSearchVaga] = useState('')
-=======
 
-export default function Home() {
-  const [apiVagas, setApiVagas] = useState([])
-  const [searchVaga, setSearchVaga] = useState([])
-  const [filterVagas, setFilterVagas] = useState([])
-
-  const API_URL = 'http://localhost:3001'
-
-  useEffect(() => {
-    fetch(`${API_URL}/vagas`)
-      .then(res => res.json())
-      .then(data => setApiVagas(data.vagas))
-      .catch(err => console.error(err))
-  }, [])
-
-  useEffect(() => {
-    if (searchVaga) {
-      const filterVaga = apiVagas.filter((vagas) =>
-        vagas.titulo.toLowerCase().includes(searchVaga.toLowerCase())
-      );
-      setApiVagas(filterVaga);
-
-    }
-  }, [searchVaga])
-
-
->>>>>>> d008e10f71db4ee9768002553947319c5585d2a1
 
   const API_URL = 'http://localhost:3001'
 
@@ -87,31 +58,12 @@ export default function Home() {
         </div>
         {/* input de pesquisa de vagas */}
         <div className="search-container container-fluid d-flex justify-content-center py-2 w-md-50">
-<<<<<<< HEAD
 
           <input
             type="text"
             onChange={handleSearch}
             placeholder="Encontre sua vaga dos sonhos"
             className="input" />
-=======
-          <form className="position-relative">
-            <input
-              type="text"
-              value={searchVaga}
-              onChange={(e) => setSearchVaga(e.target.value)}
-              placeholder="Encontre sua vaga dos sonhos"
-              className="input" />
-            {filterVagas.length === 0
-              ? <p>Opa! ainda não existem vagas para este cargo!</p>
-              : <ul>{filterVagas.map(vaga => <li key={vaga.id}>{vaga.titulo}</li>)}
-              </ul>
-            }
-            <button type="submit" className="buttonSearch">
-              <i className="bi bi-search"></i>
-            </button>
-          </form>
->>>>>>> d008e10f71db4ee9768002553947319c5585d2a1
         </div>
         {JSON.stringify(vagas)}
         {
@@ -124,9 +76,9 @@ export default function Home() {
               ))}
             </>
           ) : (
-                <span className="px-4 text-black">
-                  Nenhuma Vaga Encontrada
-                </span>
+            <span className="px-4 text-black">
+              Nenhuma Vaga Encontrada
+            </span>
           )
         }
 

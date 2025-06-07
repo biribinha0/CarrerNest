@@ -12,36 +12,20 @@
 * {
     margin: 0;
     padding: 0;
+    max-width: 100%;
 }
 
 body,
 html {
     margin: 0;
     padding: 0;
-    height: 100%;
 }
 
-.container .container-sidebar{
+.container.container-sidebar{
     display: flex;
     width: 100%;
 }
 
-.btn-sair {
-    all: unset;
-    background-color: #FF0000;
-    color: #fff;
-    box-shadow: 0 2px 5px #00000054;
-    transition: .2s;
-}
-
-.btn-sair:hover {
-    background-color: #cc0202;
-    box-shadow: 0 2px 10px #00000081;
-}
-
-.btn-sair:active {
-    background-color: #FF0000;
-}
 
 .bg-preto {
     background-color: #000;
@@ -166,7 +150,6 @@ html {
     min-height: 100vh;
 }
 
-<<<<<<< HEAD
 .card{
     background-color: #f1f1f1;
     color: #000;
@@ -175,8 +158,6 @@ html {
     background-color: #fafafa;
 }
 
-=======
->>>>>>> d008e10f71db4ee9768002553947319c5585d2a1
 
 @media (max-width: 576px) {
     .searchvaga{

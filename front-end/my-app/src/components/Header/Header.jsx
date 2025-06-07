@@ -66,11 +66,7 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className="nav-item p-2">
-<<<<<<< HEAD
                                 <Link className="headertitulao nav-link fw-bold" href="/Vagas">
-=======
-                                <Link className="headertitulao nav-link fw-bold" href="/ExplorarVagas">
->>>>>>> d008e10f71db4ee9768002553947319c5585d2a1
                                     Explorar vagas
                                 </Link>
                             </li>
